@@ -7,6 +7,8 @@ LLMs knowldge is distilled to smaller language models to increase scalability an
 
 The infromation about the dataset of activities of daily living in a multi-resident setting can be found [here](https://jcumin.github.io/datasets). 
 
+The required Python module are determined in requirements.txt. 
+
 ## 1. Data Preparation and Preprocessing
 Sensor State Generation and Window Segmentation in preprocess.py
 
@@ -15,3 +17,5 @@ Sensor State Generation and Window Segmentation in preprocess.py
 ## 3. Knowledge Distillation via LoRA Fine-Tuning
 
 ## 4. Evaluation and Label Extraction
+
+

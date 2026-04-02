@@ -18,9 +18,9 @@ def run_teacher_inference(dry_run_count=None):
     # INITIALIZE vLLM ENGINE 
     llm = LLM(
         model=MODEL_NAME,
-        tensor_parallel_size=1,      
+        tensor_parallel_size=2,      
         max_model_len=4096,
-        gpu_memory_utilization=0.90,
+        gpu_memory_utilization=0.80,
         trust_remote_code=True
     )
 

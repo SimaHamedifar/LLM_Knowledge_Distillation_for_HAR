@@ -13,7 +13,31 @@ The required Python module are determined in requirements.txt.
 Sensor State Generation and Window Segmentation in preprocess.py
 
 ## 2. Teacher Model Inference
-
+The large-scale model Qwen3-32B creates the teacher agent for collecting the reasoning and labels. 
+The open-source library, vLLM is used for fast and efficient LLM inference is used. It manages GPU memory more efficiently than HuggingFace Transformers. 
+Ubuntu app is used to configure vLLM in Linux environment. 
+``` bash
+mkdir ~/LLM_Knowledge_Distillation_for_HAR && cd ~/LLM_Knowledge_Distillation_for_HAR
+python3 -m venv .venv
+source .venv/bin/activate
+sudo apt install nvidia-cuda-toolkit build-essential -y
+uv pip install vllm
+python3 -c "import vllm; print('vLLM Version:', vllm.__version__)"
+```
+To bridge between Linux and Windows, Windows Subsystem for Linux (WSL2) is applied by installing the related extention on VSCode.   
+Check the number of GPUs using 
+``` bash
+nvidia-smi
+``` bash
+and sanity check of 
+```
+python3 -c "import torch; print(f'GPUs Detected: {torch.cuda.device_count()}');"
+```
+The autorization for using the Qwen3-32B model is require
+``` bash
+hf auth login
+# The token string is asked.
+```
 ## 3. Knowledge Distillation via LoRA Fine-Tuning
 
 ## 4. Evaluation and Label Extraction

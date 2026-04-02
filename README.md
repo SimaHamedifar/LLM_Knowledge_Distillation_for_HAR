@@ -28,9 +28,9 @@ To bridge between Linux and Windows, Windows Subsystem for Linux (WSL2) is appli
 Check the number of GPUs using 
 ``` bash
 nvidia-smi
-``` bash
+``` 
 and sanity check of 
-```
+```bash
 python3 -c "import torch; print(f'GPUs Detected: {torch.cuda.device_count()}');"
 ```
 The autorization for using the Qwen3-32B model is require

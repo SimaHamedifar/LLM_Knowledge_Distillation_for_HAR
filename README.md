@@ -39,7 +39,12 @@ hf auth login
 # The token string is asked.
 ```
 ## 3. Knowledge Distillation via LoRA Fine-Tuning
+To ensure high-fidelity knowledge transfer, a cross-validation filter was applied to the teacher-generated reasoning traces. Only rationales that successfully converged on the ground-truth activity label were included in the student's fine-tuning corpus.
 
+requirement:
+```bash
+pip install trl peft
+```
 ## 4. Evaluation and Label Extraction
 
 
